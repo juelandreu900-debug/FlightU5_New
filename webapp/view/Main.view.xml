@@ -1,0 +1,28 @@
+<mvc:View controllerName="flightui5jn.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}" showNavButton="true"
+		navButtonPress=".onNavBack">
+    	<Table
+    id="flightTable"
+    items="{
+        path: '/FlightJN',
+        sorter: { path: 'Carrname' }
+    }">
+    <columns>
+        <Column><Text text="{i18n>Carrid}" /></Column>
+        <Column><Text text="{i18n>Carrname}" /></Column>
+        <Column><Text text="{i18n>url}" /></Column>
+    </columns>
+    <items>
+        <ColumnListItem type="Navigation" press="onNavToEmpl">
+            <cells>
+                <Text text="{Carrid}" />
+                <Text text="{Carrname}" />
+                <Text text="{url}" />
+            </cells>
+        </ColumnListItem>
+    </items>
+</Table>
+    </Page>
+</mvc:View>
