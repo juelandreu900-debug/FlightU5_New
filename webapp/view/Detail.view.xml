@@ -112,7 +112,7 @@
 			<m:ColumnListItem id="_IDGenColumnListItem1" vAlign="Middle" highlight="{= ${FlghDetailModel>SeatsOcc} > 180 ? 'Success' : 'Error' }">
 				<m:cells>
 					<m:Text id="_IDGenText19" text="{FlghDetailModel>Connid}" wrapping="false" />
-					<m:Text id="_IDGenText20"  text="{FlghDetailModel>Fldate}" wrapping="false"/>
+					<m:Text id="_IDGenText20"  text="{path:'FlghDetailModel>Fldate' , type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'MM/dd/yyyy'}}" wrapping="false"/>
 					<m:Text id="_IDGenText90"  text="{path: 'FlghDetailModel>Fldate', type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'MM/dd/yyyy' }}" wrapping="false"/>
 					<m:Text id="_IDGenText21"  text="{FlghDetailModel>Price}" />
 					<m:Text id="_IDGenText22"  text="{FlghDetailModel>Currency}" />
