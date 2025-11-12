@@ -19,21 +19,32 @@ sap.ui.define([
 
             return day + "." + month + "." + year;
         },
-        getCarrierUrl: function (sUrl, sCarrname) {
-    if (!sUrl || sUrl.trim() === "") {
-        return "www." + sCarrname.toLowerCase() + ".com";
+getCarrierUrl: function (sUrl, sCarrname) {
+    if (!sCarrname) {
+        return "";
     }
-    return sUrl;
-},getCarrierLogo: function (sCarrid) {
+    if (sUrl && sUrl.trim() !== "") {
+        return sUrl;
+    }
+    var cleanName = sCarrname
+        .toLowerCase()
+        .replace(/\s+/g, "")      
+        .replace(/[^a-z0-9]/g, ""); 
+    return "https://www." + cleanName + ".com";
+},
+
+    
+    getCarrierLogo: function (sCarrid) {
+        debugger
     switch (sCarrid) {
         case "AZ":
-            return "Logo_airberlin.svg.png";
+            return "/img/Logo_airberlin.svg.png";
         case "LH":
-            return "lufthansa.png";
+            return "/img/lufthansa.png";
         case "AA":
-            return "default_logo (1).png";
+            return "/img/default_logo (1).png";
         default:
-            return "default_logo (1).png";
+            return "/img/default_logo (1).png";
     }
 }
 
